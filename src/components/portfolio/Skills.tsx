@@ -43,7 +43,12 @@ export function Skills() {
   const { data } = usePortfolio();
   const skills = data?.skills ?? [];
   return (
-    <Section id="skills" eyebrow="What I work with" title="Skills & Tools" description="The technologies I use to bring ideas to life.">
+    <Section
+      id="skills"
+      eyebrow="What I work with"
+      title="Skills & Tools"
+      description="The technologies I use to bring ideas to life."
+    >
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {skills.map((s) => (
           <div

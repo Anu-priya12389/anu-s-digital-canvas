@@ -7,25 +7,33 @@ export function Hero() {
       {/* Floating blobs */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-primary/30 blur-3xl blob-anim" />
-        <div className="absolute top-1/3 -right-32 h-[28rem] w-[28rem] rounded-full bg-accent/30 blur-3xl blob-anim" style={{ animationDelay: "-5s" }} />
-        <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-primary-glow/25 blur-3xl blob-anim" style={{ animationDelay: "-9s" }} />
+        <div
+          className="absolute top-1/3 -right-32 h-[28rem] w-[28rem] rounded-full bg-accent/30 blur-3xl blob-anim"
+          style={{ animationDelay: "-5s" }}
+        />
+        <div
+          className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-primary-glow/25 blur-3xl blob-anim"
+          style={{ animationDelay: "-9s" }}
+        />
       </div>
 
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 pt-36 pb-24 md:grid-cols-2 md:pt-44">
         <div className="space-y-7">
           <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-muted-foreground">
-            <span className="h-2 w-2 rounded-full bg-accent animate-pulse" /> Available for opportunities
+            <span className="h-2 w-2 rounded-full bg-accent animate-pulse" /> Available for
+            opportunities
           </span>
 
           <h1 className="font-display text-5xl font-bold leading-[1.05] sm:text-6xl md:text-7xl">
             Hi, I'm <span className="text-gradient">Anu Priya</span>
           </h1>
           <p className="text-xl font-medium text-foreground/80 md:text-2xl">
-            BCA Student · Aspiring <span className="text-gradient font-semibold">Full Stack Developer</span>
+            BCA Student · Aspiring{" "}
+            <span className="text-gradient font-semibold">Full Stack Developer</span>
           </p>
           <p className="max-w-xl text-base text-muted-foreground md:text-lg">
-            Passionate about building modern web applications, solving real-world problems, and continuously
-            learning emerging technologies.
+            Passionate about building modern web applications, solving real-world problems, and
+            continuously learning emerging technologies.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -55,7 +63,11 @@ export function Hero() {
           <ul className="flex items-center gap-3 pt-3">
             {[
               { href: "https://github.com/Anu-priya12389", label: "GitHub", Icon: FiGithub },
-              { href: "https://www.linkedin.com/in/anupriya-v-a28210324/", label: "LinkedIn", Icon: FiLinkedin },
+              {
+                href: "https://www.linkedin.com/in/anupriya-v-a28210324/",
+                label: "LinkedIn",
+                Icon: FiLinkedin,
+              },
               { href: "mailto:anupriyav38@gmail.com", label: "Email", Icon: FiMail },
             ].map(({ href, label, Icon }) => (
               <li key={label}>

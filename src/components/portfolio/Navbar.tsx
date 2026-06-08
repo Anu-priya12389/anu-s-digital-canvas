@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FiMoon, FiSun, FiMenu, FiX } from "react-icons/fi";
-import { useTheme } from "@/hooks/use-theme";
+import { useTheme } from "@/hooks/theme-context";
 
 const links = [
   { id: "home", label: "Home" },
@@ -28,7 +28,9 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = links.map((l) => document.getElementById(l.id)).filter(Boolean) as HTMLElement[];
+    const sections = links
+      .map((l) => document.getElementById(l.id))
+      .filter(Boolean) as HTMLElement[];
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => e.isIntersecting && setActive(e.target.id));
@@ -56,7 +58,10 @@ export function Navbar() {
             scrolled ? "shadow-card" : ""
           }`}
         >
-          <button onClick={() => go("home")} className="flex items-center gap-2 font-display text-lg font-bold">
+          <button
+            onClick={() => go("home")}
+            className="flex items-center gap-2 font-display text-lg font-bold"
+          >
             <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow">
               AP
             </span>
@@ -69,7 +74,9 @@ export function Navbar() {
                 <button
                   onClick={() => go(l.id)}
                   className={`relative rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
-                    active === l.id ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                    active === l.id
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {l.label}

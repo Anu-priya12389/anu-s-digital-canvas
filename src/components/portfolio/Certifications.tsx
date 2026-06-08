@@ -6,7 +6,12 @@ export function Certifications() {
   const { data } = usePortfolio();
   const items = data?.certifications ?? [];
   return (
-    <Section id="certifications" eyebrow="Continuous learning" title="Certifications" description="Courses and credentials earned along the way.">
+    <Section
+      id="certifications"
+      eyebrow="Continuous learning"
+      title="Certifications"
+      description="Courses and credentials earned along the way."
+    >
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {items.map((c) => (
           <a

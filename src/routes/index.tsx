@@ -12,7 +12,8 @@ import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 
 const TITLE = "Anu Priya — BCA Student & Aspiring Full Stack Developer";
-const DESC = "Portfolio of Anu Priya, a BCA student passionate about building modern web applications, problem solving and continuously learning emerging technologies.";
+const DESC =
+  "Portfolio of Anu Priya, a BCA student passionate about building modern web applications, problem solving and continuously learning emerging technologies.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
