@@ -1,6 +1,11 @@
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { Section } from "./Section";
 import { usePortfolio } from "@/hooks/use-portfolio";
+import { optimizedImage, srcSet } from "@/lib/img";
+
+// Card renders at ~400px wide on mobile up to ~520px on large viewports.
+const CARD_WIDTHS = [400, 600, 900, 1200];
+const CARD_ASPECT_H = 250; // 16:10 of 400
 
 const gradients = [
   "from-indigo-500/30 to-fuchsia-500/30",
@@ -29,9 +34,15 @@ export function Projects() {
             >
               {p.image_url ? (
                 <img
-                  src={p.image_url}
+                  src={optimizedImage(p.image_url, 600, { height: 375 })}
+                  srcSet={srcSet(p.image_url, CARD_WIDTHS, CARD_ASPECT_H)}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   alt={p.title}
-                  loading="lazy"
+                  width={600}
+                  height={375}
+                  loading={idx === 0 ? "eager" : "lazy"}
+                  fetchPriority={idx === 0 ? "high" : "auto"}
+                  decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               ) : (
