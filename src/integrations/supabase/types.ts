@@ -150,8 +150,11 @@ export type Database = {
         Row: {
           bio: string | null
           created_at: string
+          email: string | null
+          github_url: string | null
           id: string
           image_url: string | null
+          linkedin_url: string | null
           name: string
           resume_url: string | null
           title: string | null
@@ -159,8 +162,11 @@ export type Database = {
         Insert: {
           bio?: string | null
           created_at?: string
+          email?: string | null
+          github_url?: string | null
           id?: string
           image_url?: string | null
+          linkedin_url?: string | null
           name: string
           resume_url?: string | null
           title?: string | null
@@ -168,8 +174,11 @@ export type Database = {
         Update: {
           bio?: string | null
           created_at?: string
+          email?: string | null
+          github_url?: string | null
           id?: string
           image_url?: string | null
+          linkedin_url?: string | null
           name?: string
           resume_url?: string | null
           title?: string | null

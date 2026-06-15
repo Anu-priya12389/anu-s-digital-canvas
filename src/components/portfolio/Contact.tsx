@@ -6,8 +6,8 @@ import { toast } from "sonner";
 import { FiMail, FiSend, FiGithub, FiLinkedin, FiCheckCircle } from "react-icons/fi";
 import { Section } from "./Section";
 import { supabase } from "@/integrations/supabase/client";
-// import { sendContactMail } from "@/lib/api/contact.functions"; // not used
-// import app from "../../firebase"; // not used
+import { usePortfolio } from "@/hooks/use-portfolio";
+
 const schema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Enter a valid email").max(255),
@@ -18,6 +18,8 @@ type FormData = z.infer<typeof schema>;
 
 export function Contact() {
   const [done, setDone] = useState(false);
+  const { data: portfolio } = usePortfolio();
+  const profile = portfolio?.profile ?? null;
   const {
     register,
     handleSubmit,
@@ -56,20 +58,20 @@ export function Contact() {
           <InfoCard
             icon={<FiMail />}
             label="Email"
-            value="anupriyav38@gmail.com"
-            href="mailto:anupriyav38@gmail.com"
+            value={(profile as any)?.email ?? "anupriyav38@gmail.com"}
+            href={`mailto:${(profile as any)?.email ?? "anupriyav38@gmail.com"}`}
           />
           <InfoCard
             icon={<FiLinkedin />}
             label="LinkedIn"
-            value="anupriya-v"
-            href="https://www.linkedin.com/in/anupriya-v-a28210324/"
+            value={(profile as any)?.linkedin_url ? new URL((profile as any).linkedin_url).pathname.replace(/^\//, "") : "anupriya-v"}
+            href={(profile as any)?.linkedin_url ?? "https://www.linkedin.com/in/anupriya-v-a28210324/"}
           />
           <InfoCard
             icon={<FiGithub />}
             label="GitHub"
-            value="Anu-priya12389"
-            href="https://github.com/Anu-priya12389"
+            value={(profile as any)?.github_url ? new URL((profile as any).github_url).pathname.replace(/^\//, "") : "Anu-priya12389"}
+            href={(profile as any)?.github_url ?? "https://github.com/Anu-priya12389"}
           />
         </div>
 
