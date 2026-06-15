@@ -81,6 +81,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Anu Priya — Portfolio" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Anu Priya — Portfolio" },
+      { name: "twitter:title", content: "Anu Priya — Portfolio" },
+      { name: "description", content: "A modern, responsive portfolio application showcasing Anu Priya's skills, projects, and experience." },
+      { property: "og:description", content: "A modern, responsive portfolio application showcasing Anu Priya's skills, projects, and experience." },
+      { name: "twitter:description", content: "A modern, responsive portfolio application showcasing Anu Priya's skills, projects, and experience." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c0592c91-2035-4859-9322-49871dbd55ab/id-preview-427cd7d0--a7b63775-3ab6-4c5c-a932-67f918de248b.lovable.app-1780893556466.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c0592c91-2035-4859-9322-49871dbd55ab/id-preview-427cd7d0--a7b63775-3ab6-4c5c-a932-67f918de248b.lovable.app-1780893556466.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
