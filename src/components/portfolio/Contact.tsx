@@ -58,20 +58,20 @@ export function Contact() {
           <InfoCard
             icon={<FiMail />}
             label="Email"
-            value="anupriyav38@gmail.com"
-            href="mailto:anupriyav38@gmail.com"
+            value={(profile as any)?.email ?? "anupriyav38@gmail.com"}
+            href={`mailto:${(profile as any)?.email ?? "anupriyav38@gmail.com"}`}
           />
           <InfoCard
             icon={<FiLinkedin />}
             label="LinkedIn"
-            value="anupriya-v"
-            href="https://www.linkedin.com/in/anupriya-v-a28210324/"
+            value={(profile as any)?.linkedin_url ? new URL((profile as any).linkedin_url).pathname.replace(/^\//, "") : "anupriya-v"}
+            href={(profile as any)?.linkedin_url ?? "https://www.linkedin.com/in/anupriya-v-a28210324/"}
           />
           <InfoCard
             icon={<FiGithub />}
             label="GitHub"
-            value="Anu-priya12389"
-            href="https://github.com/Anu-priya12389"
+            value={(profile as any)?.github_url ? new URL((profile as any).github_url).pathname.replace(/^\//, "") : "Anu-priya12389"}
+            href={(profile as any)?.github_url ?? "https://github.com/Anu-priya12389"}
           />
         </div>
 
