@@ -1,5 +1,5 @@
 import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from "react-icons/fi";
-import heroImg from "@/assets/anupriya-hero.jpg";
+import heroAsset from "@/assets/anupriya-profile.jpg.asset.json";
 
 export function Hero() {
   return (
@@ -90,10 +90,8 @@ export function Hero() {
           <div className="float-anim">
             <div className="relative aspect-square w-72 overflow-hidden rounded-[2.25rem] border border-border/60 shadow-glow sm:w-96 md:w-[26rem]">
               <img
-                src={heroImg}
+                src={heroAsset.url}
                 alt="Anu Priya — BCA Student and aspiring Full Stack Developer"
-                width={1024}
-                height={1024}
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-accent/20" />
