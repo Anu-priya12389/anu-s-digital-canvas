@@ -6,8 +6,8 @@ import { toast } from "sonner";
 import { FiMail, FiSend, FiGithub, FiLinkedin, FiCheckCircle } from "react-icons/fi";
 import { Section } from "./Section";
 import { supabase } from "@/integrations/supabase/client";
-// import { sendContactMail } from "@/lib/api/contact.functions"; // not used
-// import app from "../../firebase"; // not used
+import { usePortfolio } from "@/hooks/use-portfolio";
+
 const schema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Enter a valid email").max(255),
