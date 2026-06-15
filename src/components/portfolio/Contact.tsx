@@ -18,6 +18,8 @@ type FormData = z.infer<typeof schema>;
 
 export function Contact() {
   const [done, setDone] = useState(false);
+  const { data: portfolio } = usePortfolio();
+  const profile = portfolio?.profile ?? null;
   const {
     register,
     handleSubmit,
