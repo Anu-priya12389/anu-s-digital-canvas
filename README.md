@@ -1,5 +1,4 @@
 # 👩‍💻 Anu Priya - Personal Portfolio
-https://anu-present-portfolio.lovable.app
 
 ## 📌 Project Description
 
